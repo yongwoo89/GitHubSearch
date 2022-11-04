@@ -8,12 +8,12 @@
 import UIKit
 import Then
 import SnapKit
-import Kingfisher
 import RxSwift
+import NVActivityIndicatorView
 
 class ViewController: UIViewController {
 
-    private var result: [String] = []
+    private var result: Github?
     
     private let viewModel = ViewModel()
     private let disposeBag = DisposeBag()
@@ -34,6 +34,10 @@ class ViewController: UIViewController {
     
     let tableView = UITableView()
     
+    let indicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 0, height: 0),
+                                            type: .ballRotateChase,
+                                            color: .black)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -50,6 +54,8 @@ class ViewController: UIViewController {
         naviView.addSubview(searchTf)
         view.addSubview(contentsView)
         contentsView.addSubview(tableView)
+
+        view.addSubview(indicator)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -77,14 +83,31 @@ class ViewController: UIViewController {
         tableView.snp.makeConstraints {
             $0.top.bottom.left.right.equalToSuperview()
         }
+        
+        indicator.snp.makeConstraints {
+            $0.centerY.centerX.equalToSuperview()
+            $0.width.height.equalTo(50)
+        }
     }
     private func bindViewModel() {
         let input = ViewModel.Input(searchString: searchTf.rx.text.orEmpty.asObservable())
         let output = viewModel.transform(input: input)
+        
         output.result.subscribe {(val) in
             guard let result = val.element else { return }
             self.result = result
             self.tableView.reloadData()
+        }.disposed(by: disposeBag)
+        
+        output.isLoading.subscribe {(val) in
+            guard let isLoading = val.element else { return }
+            DispatchQueue.main.async {
+                if isLoading {
+                    self.indicator.startAnimating()
+                } else {
+                    self.indicator.stopAnimating()
+                }
+            }
         }.disposed(by: disposeBag)
     }
 }
@@ -97,17 +120,16 @@ extension ViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.result.count
+        return self.result?.items.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier) as? CustomCell else {
             return UITableViewCell()
         }
-        let title = result[indexPath.row]
+        let item = result?.items[indexPath.row]
 
-        cell.setCell(title: title,
-                     imageUrl: "https://picsum.photos/200/300")
+        cell.setCell(title: item?.title ?? "")
 
         return cell
     }
@@ -116,6 +138,7 @@ extension ViewController: UITableViewDelegate {
 // MARK: - UITableViewDataSource
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("didSelect")
+        let item = result?.items[indexPath.row]
+        print(item?.url ?? "")
     }
 }

@@ -11,12 +11,9 @@ class CustomCell: UITableViewCell {
     static var identifier = "CustomCell"
 
     let labelFrameView = UIView().then {
-        $0.backgroundColor = UIColor.red
         $0.layer.cornerRadius = 10
         $0.layer.masksToBounds = true
     }
-    
-    let imgView = UIImageView()
 
     let label = UILabel().then {
         $0.textColor = UIColor.blue
@@ -37,17 +34,9 @@ class CustomCell: UITableViewCell {
         self.addSubview(labelFrameView)
         self.selectionStyle = .none
         labelFrameView.addSubview(label)
-        self.addSubview(imgView)
 
         labelFrameView.snp.makeConstraints {
-            $0.top.bottom.right.equalToSuperview().inset(10)
-            $0.left.equalTo(60)
-        }
-        
-        imgView.snp.makeConstraints {
-            $0.left.equalTo(10)
-            $0.centerY.equalToSuperview()
-            $0.width.height.equalTo(30)
+            $0.top.bottom.left.right.equalToSuperview().inset(10)
         }
 
         label.snp.makeConstraints {
@@ -55,10 +44,7 @@ class CustomCell: UITableViewCell {
         }
     }
     
-    func setCell(title: String, imageUrl: String) {
+    func setCell(title: String) {
         self.label.text = title
-        if let url = URL(string: imageUrl) {
-            imgView.kf.setImage(with: url)
-        }
     }
 }

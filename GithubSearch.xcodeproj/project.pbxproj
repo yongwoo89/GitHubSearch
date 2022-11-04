@@ -15,11 +15,13 @@
 		1429C80F2914D08A0004C25C /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 1429C80E2914D08A0004C25C /* Then */; };
 		1429C8122914D09D0004C25C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1429C8112914D09D0004C25C /* SnapKit */; };
 		1429C8162914D6CA0004C25C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429C8152914D6CA0004C25C /* CustomCell.swift */; };
-		1429C81D2914DB3B0004C25C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1429C81C2914DB3B0004C25C /* Kingfisher */; };
 		1429C81F2914E31E0004C25C /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429C81E2914E31E0004C25C /* ViewModelType.swift */; };
 		1429C8222914E34F0004C25C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 1429C8212914E34F0004C25C /* RxCocoa */; };
 		1429C8242914E34F0004C25C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1429C8232914E34F0004C25C /* RxSwift */; };
 		1429C8262914E39F0004C25C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429C8252914E39F0004C25C /* ViewModel.swift */; };
+		1429C8292914EE7B0004C25C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1429C8282914EE7B0004C25C /* Alamofire */; };
+		1429C82B2914F0770004C25C /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429C82A2914F0770004C25C /* GitHub.swift */; };
+		1429C82E2914FDE40004C25C /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 1429C82D2914FDE40004C25C /* NVActivityIndicatorView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,7 @@
 		1429C8152914D6CA0004C25C /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		1429C81E2914E31E0004C25C /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		1429C8252914E39F0004C25C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		1429C82A2914F0770004C25C /* GitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,9 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1429C81D2914DB3B0004C25C /* Kingfisher in Frameworks */,
 				1429C80F2914D08A0004C25C /* Then in Frameworks */,
 				1429C8242914E34F0004C25C /* RxSwift in Frameworks */,
+				1429C82E2914FDE40004C25C /* NVActivityIndicatorView in Frameworks */,
+				1429C8292914EE7B0004C25C /* Alamofire in Frameworks */,
 				1429C8222914E34F0004C25C /* RxCocoa in Frameworks */,
 				1429C8122914D09D0004C25C /* SnapKit in Frameworks */,
 			);
@@ -72,7 +76,6 @@
 			children = (
 				1429C80C2914CFE10004C25C /* View */,
 				1429C8192914D96A0004C25C /* ViewModel */,
-				1429C81A2914D9710004C25C /* Service */,
 				1429C8182914D9600004C25C /* Protocol */,
 				1429C8172914D94F0004C25C /* Model */,
 				1429C7F82914CD1C0004C25C /* AppDelegate.swift */,
@@ -104,6 +107,7 @@
 		1429C8172914D94F0004C25C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1429C82A2914F0770004C25C /* GitHub.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -122,13 +126,6 @@
 				1429C8252914E39F0004C25C /* ViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		1429C81A2914D9710004C25C /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +147,10 @@
 			packageProductDependencies = (
 				1429C80E2914D08A0004C25C /* Then */,
 				1429C8112914D09D0004C25C /* SnapKit */,
-				1429C81C2914DB3B0004C25C /* Kingfisher */,
 				1429C8212914E34F0004C25C /* RxCocoa */,
 				1429C8232914E34F0004C25C /* RxSwift */,
+				1429C8282914EE7B0004C25C /* Alamofire */,
+				1429C82D2914FDE40004C25C /* NVActivityIndicatorView */,
 			);
 			productName = GithubSearch;
 			productReference = 1429C7F52914CD1C0004C25C /* GithubSearch.app */;
@@ -185,8 +183,9 @@
 			packageReferences = (
 				1429C80D2914D08A0004C25C /* XCRemoteSwiftPackageReference "Then" */,
 				1429C8102914D09D0004C25C /* XCRemoteSwiftPackageReference "SnapKit" */,
-				1429C81B2914DB3B0004C25C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				1429C8202914E34F0004C25C /* XCRemoteSwiftPackageReference "RxSwift" */,
+				1429C8272914EE7B0004C25C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				1429C82C2914FDE30004C25C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = 1429C7F62914CD1C0004C25C /* Products */;
 			projectDirPath = "";
@@ -217,6 +216,7 @@
 				1429C7FD2914CD1C0004C25C /* ViewController.swift in Sources */,
 				1429C7F92914CD1C0004C25C /* AppDelegate.swift in Sources */,
 				1429C8162914D6CA0004C25C /* CustomCell.swift in Sources */,
+				1429C82B2914F0770004C25C /* GitHub.swift in Sources */,
 				1429C81F2914E31E0004C25C /* ViewModelType.swift in Sources */,
 				1429C8262914E39F0004C25C /* ViewModel.swift in Sources */,
 				1429C7FB2914CD1C0004C25C /* SceneDelegate.swift in Sources */,
@@ -443,20 +443,28 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		1429C81B2914DB3B0004C25C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		1429C8202914E34F0004C25C /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
 				branch = main;
 				kind = branch;
+			};
+		};
+		1429C8272914EE7B0004C25C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		1429C82C2914FDE30004C25C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -472,11 +480,6 @@
 			package = 1429C8102914D09D0004C25C /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		1429C81C2914DB3B0004C25C /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1429C81B2914DB3B0004C25C /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
 		1429C8212914E34F0004C25C /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1429C8202914E34F0004C25C /* XCRemoteSwiftPackageReference "RxSwift" */;
@@ -486,6 +489,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1429C8202914E34F0004C25C /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		1429C8282914EE7B0004C25C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1429C8272914EE7B0004C25C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		1429C82D2914FDE40004C25C /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1429C82C2914FDE30004C25C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
