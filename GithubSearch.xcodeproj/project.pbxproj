@@ -16,6 +16,10 @@
 		1429C8122914D09D0004C25C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1429C8112914D09D0004C25C /* SnapKit */; };
 		1429C8162914D6CA0004C25C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429C8152914D6CA0004C25C /* CustomCell.swift */; };
 		1429C81D2914DB3B0004C25C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1429C81C2914DB3B0004C25C /* Kingfisher */; };
+		1429C81F2914E31E0004C25C /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429C81E2914E31E0004C25C /* ViewModelType.swift */; };
+		1429C8222914E34F0004C25C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 1429C8212914E34F0004C25C /* RxCocoa */; };
+		1429C8242914E34F0004C25C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1429C8232914E34F0004C25C /* RxSwift */; };
+		1429C8262914E39F0004C25C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429C8252914E39F0004C25C /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,8 @@
 		1429C8042914CD1D0004C25C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1429C8062914CD1D0004C25C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1429C8152914D6CA0004C25C /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		1429C81E2914E31E0004C25C /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		1429C8252914E39F0004C25C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +42,8 @@
 			files = (
 				1429C81D2914DB3B0004C25C /* Kingfisher in Frameworks */,
 				1429C80F2914D08A0004C25C /* Then in Frameworks */,
+				1429C8242914E34F0004C25C /* RxSwift in Frameworks */,
+				1429C8222914E34F0004C25C /* RxCocoa in Frameworks */,
 				1429C8122914D09D0004C25C /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,11 +70,11 @@
 		1429C7F72914CD1C0004C25C /* GithubSearch */ = {
 			isa = PBXGroup;
 			children = (
-				1429C81A2914D9710004C25C /* Service */,
+				1429C80C2914CFE10004C25C /* View */,
 				1429C8192914D96A0004C25C /* ViewModel */,
+				1429C81A2914D9710004C25C /* Service */,
 				1429C8182914D9600004C25C /* Protocol */,
 				1429C8172914D94F0004C25C /* Model */,
-				1429C80C2914CFE10004C25C /* View */,
 				1429C7F82914CD1C0004C25C /* AppDelegate.swift */,
 				1429C7FA2914CD1C0004C25C /* SceneDelegate.swift */,
 				1429C8012914CD1D0004C25C /* Assets.xcassets */,
@@ -103,6 +111,7 @@
 		1429C8182914D9600004C25C /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				1429C81E2914E31E0004C25C /* ViewModelType.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -110,6 +119,7 @@
 		1429C8192914D96A0004C25C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1429C8252914E39F0004C25C /* ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -141,6 +151,8 @@
 				1429C80E2914D08A0004C25C /* Then */,
 				1429C8112914D09D0004C25C /* SnapKit */,
 				1429C81C2914DB3B0004C25C /* Kingfisher */,
+				1429C8212914E34F0004C25C /* RxCocoa */,
+				1429C8232914E34F0004C25C /* RxSwift */,
 			);
 			productName = GithubSearch;
 			productReference = 1429C7F52914CD1C0004C25C /* GithubSearch.app */;
@@ -174,6 +186,7 @@
 				1429C80D2914D08A0004C25C /* XCRemoteSwiftPackageReference "Then" */,
 				1429C8102914D09D0004C25C /* XCRemoteSwiftPackageReference "SnapKit" */,
 				1429C81B2914DB3B0004C25C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				1429C8202914E34F0004C25C /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 1429C7F62914CD1C0004C25C /* Products */;
 			projectDirPath = "";
@@ -204,6 +217,8 @@
 				1429C7FD2914CD1C0004C25C /* ViewController.swift in Sources */,
 				1429C7F92914CD1C0004C25C /* AppDelegate.swift in Sources */,
 				1429C8162914D6CA0004C25C /* CustomCell.swift in Sources */,
+				1429C81F2914E31E0004C25C /* ViewModelType.swift in Sources */,
+				1429C8262914E39F0004C25C /* ViewModel.swift in Sources */,
 				1429C7FB2914CD1C0004C25C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +451,14 @@
 				kind = branch;
 			};
 		};
+		1429C8202914E34F0004C25C /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -453,6 +476,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1429C81B2914DB3B0004C25C /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		1429C8212914E34F0004C25C /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1429C8202914E34F0004C25C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		1429C8232914E34F0004C25C /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1429C8202914E34F0004C25C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

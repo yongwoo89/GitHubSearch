@@ -9,9 +9,15 @@ import UIKit
 import Then
 import SnapKit
 import Kingfisher
+import RxSwift
 
 class ViewController: UIViewController {
 
+    private var result: [String] = []
+    
+    private let viewModel = ViewModel()
+    private let disposeBag = DisposeBag()
+    
     let naviView = UIView().then {
         $0.backgroundColor = .gray
     }
@@ -73,7 +79,13 @@ class ViewController: UIViewController {
         }
     }
     private func bindViewModel() {
-        
+        let input = ViewModel.Input(searchString: searchTf.rx.text.orEmpty.asObservable())
+        let output = viewModel.transform(input: input)
+        output.result.subscribe {(val) in
+            guard let result = val.element else { return }
+            self.result = result
+            self.tableView.reloadData()
+        }.disposed(by: disposeBag)
     }
 }
 
@@ -85,15 +97,16 @@ extension ViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return self.result.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier) as? CustomCell else {
             return UITableViewCell()
         }
+        let title = result[indexPath.row]
 
-        cell.setCell(title: "skdlfhaldfhaljdfhkjah",
+        cell.setCell(title: title,
                      imageUrl: "https://picsum.photos/200/300")
 
         return cell
